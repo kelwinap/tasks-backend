@@ -66,6 +66,14 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
+        stage('Health Check') {
+            steps {
+                sleep(15)
+                dir('functional-tests') {
+                    sh 'npm run cy:run --spec "cypress/integration/healthcheck.spec.js"'
+                }
+            }
+        }
 
         
     }
