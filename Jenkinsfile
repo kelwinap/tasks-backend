@@ -54,7 +54,7 @@ pipeline {
         stage('Functional Tests') {
             steps {
                 dir('functional-tests') {
-                    git 'https://github.com/kelwinap/tasks-functional-tests'
+                    git branch: 'main', url: 'https://github.com/kelwinap/tasks-api-test'
                     sh 'npm install'
                     sh 'npm run cy:run'
                 }
