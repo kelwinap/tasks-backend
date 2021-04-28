@@ -54,9 +54,9 @@ pipeline {
         stage('Functional Tests') {
             steps {
                 dir('functional-tests') {
-                    git branch: 'main', url: 'https://github.com/kelwinap/tasks-api-test'
+                    git branch: 'main', url: 'https://github.com/kelwinap/tasks-functional-tests'
                     sh 'npm install'
-                    sh 'npm run cy:run'
+                    sh 'npx cypress run --spec cypress/integration/examples/task.spec.js'
                 }
             }
         }
