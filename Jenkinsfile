@@ -70,7 +70,7 @@ pipeline {
             steps {
                 sleep(15)
                 dir('functional-tests') {
-                    sh 'npm run cy:run --spec "cypress/integration/healthcheck.spec.js"'
+                    sh 'npm run cy:run --spec "cypress/integration/examples/healthcheck.spec.js"'
                 }
             }
         }
